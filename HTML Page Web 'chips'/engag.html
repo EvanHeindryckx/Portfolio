@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo2.ico" />
+    <title>ACCEUIL</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header class="header">
+    <a href="" class="logo"></a>
+    <img src="logo2.png" class="logo">
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+        <li><a href="./index.html"><b>Accueil</b></a></li>
+        <li><a href="./produit.html"><b>Nos produits</b></a></li>
+        <li><a href="./engag.html" class="active"><b>Nos engagements</b></a></li>
+        <li><a href="./nous.html"><b>Qui sommes nous ?</b></a></li>
+        <li><a href="./contact.html"><b>Contactez nous</b></a></li>
+    </ul>
+</header>
+<
+<div class="content">
+<section class="engagement-section">
+    <h2>Concept clé</h2>
+    <p>Le concept de HealthSavior© est de récupérer des légumes et fruits non conformes pour les transformer en délicieuses chips. Inspirés par Too Good To Go, nous nous engageons à lutter contre le gaspillage alimentaire en donnant une seconde vie à des produits destinés à être jetés. Actuellement axée sur la création de chips, notre entreprise vise à étendre ses activités à d'autres produits transformés tels que des compotes, des soupes, des purées et des confitures.</p>
+    <p>Nous sollicitons l'aide des agriculteurs et commerçants locaux pour la collecte des matières premières et envisageons de couvrir tout le pays pour réduire le gaspillage alimentaire en France.</p>
+</section>
+
+<section class="engagement-section">
+    <h2>Valeurs du projet</h2>
+    <p>Les valeurs fondamentales de HealthSavior© sont axées sur la prévention du gaspillage alimentaire, le respect des consommateurs, l'écologie et la solidarité sociale. Nous nous engageons à éviter les surcharges financières pour nos produits et, en cas de bénéfices, à soutenir des actions écologiques. La cohésion sociale, la solidarité entre générations et l'épanouissement humain sont également des valeurs importantes pour notre équipe fondatrice.</p>
+</section>
+
+
+
+<section class="engagement-section">
+    <h2>Recrutement des meilleurs candidats</h2>
+    <p>Nous recruterons des individus qualifiés pour les postes disponibles dans notre siège social, avec une attention particulière à ceux qui partagent nos valeurs de lutte contre le gaspillage alimentaire et de respect des consommateurs. Les opportunités seront également ouvertes à des personnes sans diplômes mais possédant des compétences relationnelles essentielles.</p>
+    <p>Le recrutement pour les chaînes de production se fera sans restriction de profil, avec une formation obligatoire. Nous visons à offrir des chances d'intégration à des personnes lambda et à communiquer via divers canaux, y compris les réseaux sociaux et Pôle Emploi, pour atteindre un large éventail de candidats.</p>
+</section>
+</div>
+
+<button id="btn-top" onclick="scrollToTop()">↑</button>
+
+<script>
+    var btnTop = document.getElementById('btn-top');
+
+    window.addEventListener('scroll', function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            btnTop.style.display = 'block';
+        } else {
+            btnTop.style.display = 'none';
+        }
+    });
+
+    // Fonction pour remonter en haut
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+<footer class="footer">
+    <p>Équipe : Evan Heindryckx, Corentin Chardon</p>
+    <p>IUT FONTAINEBLEAU</p>
+    <div class="social-links">
+        <a href="facebook.com" target="_blank">Facebook</a>
+        <a href="https://twitter.com/" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+</footer>
+
+</body>
+</html>

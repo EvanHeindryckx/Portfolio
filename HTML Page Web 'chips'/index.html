@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo2.ico" />
+    <title>ACCEUIL</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header class="header">
+    <a href="" class="logo"></a>
+    <img src="logo2.png" class="logo">
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+        <li><a href="./index.html" class="active"><b>Accueil</b></a></li>
+        <li><a href="./produit.html"><b>Nos produits</b></a></li>
+        <li><a href="./engag.html"><b>Nos engagements</b></a></li>
+        <li><a href="./nous.html"><b>Qui sommes nous ?</b></a></li>
+        <li><a href="./contact.html"><b>Contactez nous</b></a></li>
+    </ul>
+</header>
+<section class="home-section">
+    <div class="image-container">
+        <img src="image.png" alt="Image d'accueil">
+    </div>
+    <div class="slogan-container">
+        <h1>Moins de gras pour plus de saveur</h1>
+        <a href="./produit.html" class="en-savoir-plus-btn">En savoir plus</a>
+    </div>
+</section>
+<button id="btn-top" onclick="scrollToTop()">↑</button>
+
+<script>
+    var btnTop = document.getElementById('btn-top');
+
+    window.addEventListener('scroll', function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            btnTop.style.display = 'block';
+        } else {
+            btnTop.style.display = 'none';
+        }
+    });
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+<footer class="footer">
+    <p>Équipe : Evan Heindryckx, Corentin Chardon</p>
+    <p>IUT FONTAINEBLEAU</p>
+    <div class="social-links">
+            <a href="facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com/" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+</footer>
+
+
+</body>
+</html>

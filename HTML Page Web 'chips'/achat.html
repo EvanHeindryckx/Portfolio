@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo2.ico" />
+    <title>Achat de Chips</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="" class="logo"></a>
+        <img src="logo2.png" class="logo">
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="./index.html"><b>Accueil</b></a></li>
+            <li><a href="./produit.html"><b>Nos produits</b></a></li>
+            <li><a href="./engag.html"><b>Nos engagements</b></a></li>
+            <li><a href="./nous.html"><b>Qui sommes-nous ?</b></a></li>
+            <li><a href="./contact.html"><b>Contactez-nous</b></a></li>
+            <li class="cart-icon" onclick="toggleCart()">&#128722; <span id="cart-count">0</span></li>
+        </ul>
+    </header>
+
+    <section class="content">
+        <div class="product-details">
+            <label for="chips-selector">Choisir une variété de chips :</label>
+            <select id="chips-selector" onchange="changeChips()">
+                <option value="pomme">Chips à la Pomme</option>
+                <option value="fraise">Chips à la Fraise</option>
+                <option value="poireau">Chips au Poireau</option>
+                <option value="betterave">Chips à la Betterave</option>
+                <option value="abricot">Chips à l'Abricot</option>
+            </select>
+        </div>
+       
+            </select>
+
+            <img id="product-image" src="chips_pomme.png" alt="Chips Pomme">
+            <h2 id="product-title">Chips Pomme</h2>
+            <p id="product-description">Les chips à la pomme : une explosion de saveur croquante, alliant la douceur naturelle des pommes à une texture croustillante. Une collation légère et délicieuse pour combler vos envies sucrées de manière saine.</p>
+            <p><strong>Prix:</strong> $10.99</p>
+            <form class="purchase-form" onsubmit="addToCart(); return false;">
+                <label for="quantity">Quantité :</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1">
+                <button type="submit">Ajouter au panier</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="cart" class="cart-container">
+        <h2>Votre panier</h2>
+        <ul id="cart-items"></ul>
+        <button onclick="resetCart()">Réinitialiser le panier</button>
+        <button onclick="completePurchase()">Acheter</button>
+    </div>
+
+    <button id="btn-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        var btnTop = document.getElementById('btn-top');
+        var cart = document.getElementById('cart');
+        var cartCount = document.getElementById('cart-count');
+        var cartItems = document.getElementById('cart-items');
+
+        window.addEventListener('scroll', function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btnTop.style.display = 'block';
+            } else {
+                btnTop.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        function changeChips() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var selector = urlParams.get('produit');
+        var selector = document.getElementById('chips-selector');
+
+        var image = document.getElementById('product-image');
+        var title = document.getElementById('product-title');
+        var description = document.getElementById('product-description');
+            switch (selector.value) {
+                case 'pomme':
+                    image.src = 'chips_pomme.png';
+                    title.textContent = 'Chips Pomme';
+                    description.textContent = 'Les chips à la pomme : une explosion de saveur croquante, alliant la douceur naturelle des pommes à une texture croustillante. Une collation légère et délicieuse pour combler vos envies sucrées de manière saine.';
+                    break;
+                case 'abricot':
+                    image.src = 'chipsabricot.png';
+                    title.textContent = 'Chips Abricot';
+                    description.textContent = 'Les chips à l abricot : une délicieuse harmonie entre la douceur de l abricot et le croustillant des chips. Une collation sucrée et gourmande pour satisfaire vos envies de manière saine.';
+                    break;
+                case 'poireau':
+                    image.src = 'chipsPOIREAU.png';
+                    title.textContent = 'Chips Poireau';
+                    description.textContent = 'Les chips au poireau : une combinaison savoureuse de saveur légèrement sucrée et de notes subtiles de poireau. Une option croustillante et originale pour les amateurs de goûts uniques.';
+                    break;
+                case 'fraise':
+                    image.src = 'chipsFRAISE.png';
+                    title.textContent = 'Chips Fraise';
+                    description.textContent = 'Les chips à la fraise : une fusion délicieuse de saveur sucrée et de croustillant. Ces chips offrent une expérience fruitée et gourmande pour satisfaire vos papilles.';
+                    break;
+                case 'betterave':
+                    image.src = 'chipsBETTERAVE.png';
+                    title.textContent = 'Chips Betterave';
+                    description.textContent = 'Les chips à la betterave : une explosion de couleur et de saveur. Ces chips offrent une expérience croquante et légèrement sucrée, idéale pour ceux qui recherchent une alternative saine et délicieuse.';
+                    break;
+            }
+        }
+
+        function addToCart() {
+            var selector = document.getElementById('chips-selector');
+            var quantity = document.getElementById('quantity').value;
+            var itemName = selector.options[selector.selectedIndex].text;
+            var cartItem = document.createElement('li');
+            cartItem.textContent = itemName + ' x' + quantity;
+            cartItems.appendChild(cartItem);
+            var itemCount = cartItems.children.length;
+            cartCount.textContent = itemCount;
+            cart.style.display = 'block';
+        }
+
+        function toggleCart() {
+
+            if (cart.style.display === 'none' || cart.style.display === '') {
+                cart.style.display = 'block';
+            } else {
+                cart.style.display = 'none';
+            }
+        }
+
+        function resetCart() {
+            cartItems.innerHTML = '';
+            cartCount.textContent = '0';
+            cart.style.display = 'none';
+        }
+
+        function completePurchase() {
+            alert("Merci pour votre achat ! Votre commande a été traitée avec succès.");
+            resetCart();
+        }
+ 
+    </script>
+
+    <footer class="footer">
+        <p>Équipe : Evan Heindryckx, Corentin Chardon</p>
+        <p>IUT FONTAINEBLEAU</p>
+        <div class="social-links">s
+                <a href="facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com/" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    </footer>
+
+</body>
+
+</html>

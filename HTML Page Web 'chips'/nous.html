@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo2.ico" />
+    <title>ACCEUIL</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header class="header">
+    <a href="" class="logo"></a>
+    <img src="logo2.png" class="logo">
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+        <li><a href="./index.html"><b>Accueil</b></a></li>
+        <li><a href="./produit.html"><b>Nos produits</b></a></li>
+        <li><a href="./engag.html"><b>Nos engagements</b></a></li>
+        <li><a href="./nous.html" class="active"><b>Qui sommes nous ?</b></a></li>
+        <li><a href="./contact.html"><b>Contactez nous</b></a></li>
+    </ul>
+</header>
+<div class="content">
+<section class="engagement-section-centre">
+    <h1>Qui sommes nous ?</h1>
+    <p>Nous sommes une équipe passionnée qui s'engage à lutter contre le gaspillage alimentaire.</p>
+
+    <!-- Nouvelle ligne "Pourquoi nous avons fait ça" -->
+    <div class="engagement-section">
+        <h2>Pourquoi nous avons fait ça</h2>
+        <p>Dans le monde, le gaspillage alimentaire est énorme, et en tant qu'êtres humains, il est de notre devoir de tout faire pour sauver la planète. Nous croyons en la nécessité de transformer des produits destinés à être jetés en délices, contribuant ainsi à la réduction du gaspillage et à la préservation de notre environnement.</p>
+    </div>
+</div>
+    <!-- Place pour une image statistique -->
+    <div class="statistic-image">
+        <!-- Ajoutez l'image de votre choix ici -->
+        <img src="stats_gaspillage.jpeg" alt="Statistique sur le gaspillage alimentaire">
+    </div>
+<div class="content">
+<section class="engagement-section">
+    <h2>Nom de l’entreprise</h2>
+    <p>Le nom de l'entreprise, HealthSavior©, allie "Health" (santé en anglais) avec "Savior" (sauveur) pour signifier "Sauveur de santé". Ce choix reflète notre engagement envers des chips saines, fabriquées uniquement à partir de fruits et légumes, sans substances chimiques ni matières grasses.</p>
+    <p>L'utilisation de l'anglais dans le nom vise à communiquer efficacement dans un monde où l'anglais est de plus en plus intégré dans notre langage quotidien. "HealthSavior" transmet le message que nos chips sont plus saines pour la santé que les alternatives.</p>
+</section>
+
+<section class="engagement-section">
+    <h2>Environnement concurrentiel</h2>
+    <p>HealthSavior© sera un nouvel entrant sur le marché des chips aux légumes. Bien que d'autres marques existent déjà, notre innovation réside dans l'introduction de saveurs sucrées/salées, l'utilisation de fruits, et l'exploration de légumes inédits pour obtenir un avantage concurrentiel. Nous visons à devenir le "nouvel entrant" avec un positionnement unique sur certaines saveurs, visant le monopole.</p>
+</section>
+</div>
+<button id="btn-top" onclick="scrollToTop()">↑</button>
+
+<script>
+    var btnTop = document.getElementById('btn-top');
+
+    window.addEventListener('scroll', function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            btnTop.style.display = 'block';
+        } else {
+            btnTop.style.display = 'none';
+        }
+    });
+
+    // Fonction pour remonter en haut
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+<footer class="footer">
+    <p>Équipe : Evan Heindryckx, Corentin Chardon</p>
+    <p>IUT FONTAINEBLEAU</p>
+    <div class="social-links">
+            <a href="facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com/" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+</footer>
+
+
+</body>
+</html>

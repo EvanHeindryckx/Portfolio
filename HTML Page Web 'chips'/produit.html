@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo2.ico" />
+    <title>ACCEUIL</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+</head>
+<body>
+<header class="header">
+    <a href="" class="logo"></a>
+    <img src="logo2.png" class="logo">
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+        <li><a href="./index.html"><b>Accueil</b></a></li>
+        <li><a href="./produit.html" class="active"><b>Nos produits</b></a></li>
+        <li><a href="./engag.html"><b>Nos engagements</b></a></li>
+        <li><a href="./nous.html"><b>Qui sommes nous ?</b></a></li>
+        <li><a href="./contact.html"><b>Contactez nous</b></a></li>
+    </ul>
+</header>
+<section class="products-section">
+    <div class="carousel-container">
+        <div class="product-carousel">
+            <div>
+                <img src="chips_pomme.png" alt="Chips Pomme">
+                <h3>Chips Pomme</h3>
+                <p>DLes chips à la pomme : une explosion de saveur croquante, alliant la douceur naturelle des pommes à une texture croustillante. Une collation légère et délicieuse pour combler vos envies sucrées de manière saine.</p>
+                <a href="achat.html?produit=pomme">Voir plus</a>
+            </div>
+            <div>
+                <img src="chipsabricot.png" alt="Chips abricot">
+                <h3>Chips Abricot</h3>
+                <p>Les chips à l abricot : une délicieuse harmonie entre la douceur de l abricot et le croustillant des chips. Une collation sucrée et gourmande pour satisfaire vos envies de manière saine.</p>
+                <a href="achat.html?produit=abricot">Voir plus</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-list">
+        <div class="product-item">
+            <img src="chipsPOIREAU.png" alt="Poireau">
+            <p>Produit 3 - $15</p>
+            <a href="achat.html?produit=poireau">Voir plus</a>
+        </div>
+        <div class="product-item">
+            <img src="chipsFRAISE.png" alt="Fraise">
+            <p>Produit 4 - $12</p>
+            <a href="achat.html?produit=fraise">Voir plus</a>
+        </div>
+        <div class="product-item">
+            <img src="chipsBETTERAVE.png" alt="Betterave">
+            <p>Produit 4 - $12</p>
+            <a href="achat.html?produit=betterave">Voir plus</a>
+        </div>
+    </div>
+</section>
+
+<button id="btn-top" onclick="scrollToTop()">↑</button>
+
+<script>
+    var btnTop = document.getElementById('btn-top');
+
+    window.addEventListener('scroll', function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            btnTop.style.display = 'block';
+        } else {
+            btnTop.style.display = 'none';
+        }
+    });
+
+    // Fonction pour remonter en haut
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Inclure la librairie Slick Carousel -->
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<!-- Initialiser le carrousel -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.product-carousel').slick({
+            // Configurations du carrousel
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            // Ajoutez d'autres configurations selon vos besoins
+        });
+    });
+</script>
+
+<footer class="footer">
+    <p>Équipe : Evan Heindryckx, Corentin Chardon</p>
+    <p>IUT FONTAINEBLEAU</p>
+    <div class="social-links">
+            <a href="facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com/" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+</footer>
+
+</body>
+</html>

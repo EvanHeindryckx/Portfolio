@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo2.ico" />
+    <title>ACCEUIL</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header class="header">
+    <a href="" class="logo"></a>
+    <img src="logo2.png" class="logo">
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+        <li><a href="./index.html"><b>Acceuil</b></a></li>
+        <li><a href="./produit.html"><b>Nos produits</b></a></li>
+        <li><a href="./engag.html"><b>Nos engagements</b></a></li>
+        <li><a href="./nous.html"><b>Qui sommes nous ?</b></a></li>
+        <li><a href="./contact.html" class="active"><b>Contactez nous</b></a></li>
+    </ul>
+</header>
+<div class="main-container">
+    <h1 class="help-title">Besoin d'aide ?</h1>
+
+
+<form method="POST" action="https://dwarves.iut-fbleau.fr/requete.php">
+    <div class="formulaire">
+        <gauche>
+            <div>
+                <label for="lastname">Nom : </label>
+            </div>
+            <br>
+
+            <div>
+                <label for="firstname">Prénom : </label>
+
+            </div>
+            <br>
+
+            <div>
+                <label for="phonenumber">N°Télephone portable :  </label>
+            </div>
+
+            <br>
+            <div>
+                <label for="message">Mail : </label>
+            </div>
+
+            <br>
+            <div>
+                <label for="message">Message : </label>
+            </div>
+            <br>
+        </gauche>
+
+        <droite>
+            <div>
+                <input type="text" name="lastname" id="firstname" placeholder="Votre prénom" required>
+            </div>
+            <br>
+            <div>
+                <input type="text" name="firstname" id="lastname" placeholder="Votre nom" required>
+
+            </div>
+            <br>
+
+            <div>
+
+                <input type="text" name="phonenumber" id="phonenumber" placeholder="00.00.00.00.00" pattern="^(\+33|0)[6-7](\d\d){4}$"required>
+            </div>
+            <br>
+
+            <div>
+
+                <input type="text" name="mail" id="mail" placeholder=".....@..com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" "required>
+            </div>
+            <br>
+            <div>
+                <textarea name="message" id="message" required placeholder="Raison précise du contact"></textarea>
+            </div>
+
+
+
+
+        </droite>
+
+
+    </div>
+
+    <div style="text-align: center;">
+        <input type="submit" value="Envoyer">
+        <input type="reset" value="x">
+    </div>
+</form>
+<button id="btn-top" onclick="scrollToTop()">↑</button>
+
+<script>
+    var btnTop = document.getElementById('btn-top');
+
+    window.addEventListener('scroll', function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            btnTop.style.display = 'block';
+        } else {
+            btnTop.style.display = 'none';
+        }
+    });
+
+    // Fonction pour remonter en haut
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+</div>
+<footer class="footer">
+    <p>Équipe : Evan Heindryckx, Corentin Chardon</p>
+    <p>IUT FONTAINEBLEAU</p>
+    <div class="social-links">
+        <a href="facebook.com" target="_blank">Facebook</a>
+        <a href="https://twitter.com/" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+</footer>
+
+
+</body>
+</html>
