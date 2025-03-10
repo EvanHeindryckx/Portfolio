@@ -1,3 +1,4 @@
+@HEINDRYCKX EVAN
 # Script de Suppression Sélective de Messages Messenger
 
 Ce script permet de **supprimer uniquement vos messages** (et non ceux de l’autre personne) dans vos conversations Facebook Messenger. Il fonctionne en **cliquant automatiquement** sur les boutons « Plus », « Supprimer » et en **validant** la pop-up de confirmation. Il gère également le **bouton radio** (value="1") avant la confirmation finale, si nécessaire.
